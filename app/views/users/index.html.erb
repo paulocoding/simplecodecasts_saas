@@ -1,30 +1,33 @@
-<% @users.each do |u| %>
-    <% if u.profile %>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <ul>
-            <li class="list-unstyled">
-              <div class="well <%= cycle('white-bg', '')%> row">
-                <div class="col-sm-4 text-center">
-                  <%= link_to u do %>
-                    <%= image_tag u.profile.avatar.url(:thumb), class: 'round-corners' %>
-                  <% end %>
-                </div>
-                <div>
-                  <%= link_to u do %>
-                    <h2><%= u.profile.first_name %> <%= u.profile.last_name %></h2>
-                  <% end %>
-                    <p><%= u.profile.job_title %> 
-                      <% if u.plan_id == 2 %>
-                        <span class="label label-danger">Pro</span>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Dev Match Community</h1>
+    <p>Welcome to the Dev Match community. Users must fill out a profile in order to be visible in the community.</p>
+    <% @users.each do |u| %>
+        <% if u.profile %>
+              <ul>
+                <li class="list-unstyled">
+                  <div class="well <%= cycle('white-bg', '')%> row">
+                    <div class="col-sm-4 text-center">
+                      <%= link_to u do %>
+                        <%= image_tag u.profile.avatar.url(:thumb), class: 'round-corners' %>
                       <% end %>
-                    </p>
-                    
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+                    </div>
+                    <div>
+                      <%= link_to u do %>
+                        <h2><%= u.profile.first_name %> <%= u.profile.last_name %></h2>
+                      <% end %>
+                        <p><%= u.profile.job_title %> 
+                          <% if u.plan_id == 2 %>
+                            <span class="label label-danger">Pro</span>
+                          <% end %>
+                        </p>
+                        
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        <% end %>
     <% end %>
-<% end %>
+  </div>
+</div>
