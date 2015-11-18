@@ -1,3 +1,8 @@
+.user-show-avatar {
+  height: 128px;
+  width: 128px;
+}
+
 .job_title_icon {
   background-color: #EEAA55;
   color: #fff;
@@ -30,4 +35,12 @@
   -webkit-box-shadow: 0px 2px 3px 1px rgba(194,194,194,1);
   -moz-box-shadow: 0px 2px 3px 1px rgba(194,194,194,1);
   box-shadow: 0px 2px 3px 1px rgba(194,194,194,1);
+}
+
+.well.white-bg {
+  background-color: #fff;
+}
+
+.round-corners {
+  border-radius: 50%;
 }
